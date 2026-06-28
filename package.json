@@ -3,8 +3,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "node scripts/build.js",
-		"dev": "node scripts/dev.js",
-		"serve": "node scripts/serve.js"
+		"dev": "node scripts/dev.js"
 	},
 	"author": "AstrlZoom",
 	"license": "MIT",

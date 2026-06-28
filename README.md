@@ -12,7 +12,6 @@ For a beginner-friendly map of what to edit, read `docs/EDITING.md`.
 
 - Change theme options in `themes/my-discord-theme.theme.css`.
 - Change the actual Discord UI styling in `src/*.css`.
-- Change add-ons in `src/addons/*.css`.
 - Do not hand-edit `build/my-discord-theme.css`; it is generated.
 - Run `pnpm build` to create `dist/my-discord-theme.theme.css`, a single combined theme file you can install manually.
 
@@ -46,51 +45,16 @@ pnpm dev
 
 Enable `my-discord-theme-dev.theme.css` in your Discord client. While `pnpm dev` is running, edits to `src/*.css` or `themes/my-discord-theme.theme.css` are rebuilt into that enabled theme file.
 
-## Add-ons
+## Scripts
 
-The add-ons from your temp folder are copied into `src/addons`.
-
-Cosmetic add-ons can stack. Server-list/layout add-ons are presets because they rewrite the same Discord columns, widths, and transforms:
-
-- `libraryGrid.css`
-- `minimalServerList.css`
-- `minimalServerMenu.css`
-- `overHeadServers.css`
-- `serverDrawer-twoGrid.css`
-- `slideDownStatus.css`
-- `user-tags.css`
-
-To try one, open `themes/my-discord-theme.theme.css` and set that add-on's variable to `on`. Keep the other layout preset variables `off`.
-
-Example:
-
-```css
---addon-minimal-server-menu: on;
-```
-
-Making all of these work together would mean rebuilding them into one new layout instead of stacking the original files unchanged.
+- `pnpm dev` watches the editable theme files and writes live updates to the Discord theme path in `.env`.
+- `pnpm build` rebuilds `build/my-discord-theme.css` and `dist/my-discord-theme.theme.css`.
 
 ## Desktop Transparency
 
 The theme now uses a darker glass tint and blur instead of being fully see-through. If native window transparency is enabled in your client, the desktop will still show through slightly.
 
 If it is too see-through, increase the alpha numbers in `--desktop-tint` and the `--bg-*` values in `themes/my-discord-theme.theme.css`. Example: `0.34` is more transparent, `0.55` is less transparent.
-
-## Browser Testing
-
-You can also test in Discord web without touching your desktop client:
-
-```powershell
-pnpm serve
-```
-
-Open `https://discord.com/app`, open DevTools, and paste this into the Console:
-
-```js
-fetch('http://127.0.0.1:8765/inject.js').then((r) => r.text()).then(eval)
-```
-
-The injected theme checks for rebuilds every second and reloads automatically.
 
 ## Publishing Later
 

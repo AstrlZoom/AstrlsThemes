@@ -4,14 +4,13 @@ This project is set up so most changes happen in one file:
 
 `themes/my-discord-theme.theme.css`
 
-Start there when you want to change colors, transparency, the DMs icon bounce, add-on toggles, or the visible theme metadata.
+Start there when you want to change colors, transparency, the DMs icon bounce, or the visible theme metadata.
 
 ## What To Edit
 
 - `themes/my-discord-theme.theme.css`: easy settings, theme name, colors, on/off switches.
 - `src/dms-button.css`: custom DMs/home icon shape, bounce animation, selected-state fixes.
 - `src/desktop-transparency.css`: see-through Discord window support.
-- `src/addons/*.css`: copied add-ons. Some stack fine, layout add-ons can fight each other.
 - `scripts/theme.config.js`: file order for the build. Only touch this when adding or removing CSS files.
 
 ## What Not To Edit
@@ -46,6 +45,12 @@ pnpm dev
 ```
 
 Then enable `my-discord-theme-dev.theme.css` in Discord. If one edit does not visually update, toggle the theme off/on or press `Ctrl+R` in Discord.
+
+## Scripts
+
+- `scripts/build.js`: combines `src/*.css` into generated theme files.
+- `scripts/dev.js`: watches your files and writes the live Discord theme file from `.env`.
+- `scripts/theme.config.js`: controls source file order and generated file paths.
 
 ## Publishing
 

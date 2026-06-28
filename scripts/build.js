@@ -16,7 +16,7 @@ function toSourcePath(filePath) {
 }
 
 function discoverCssFiles(dir = srcDir, prefix = '') {
-    // Finds every CSS file under src/. This keeps add-on folders from being missed.
+    // Finds every CSS file under src/. This reminds you to list new CSS files in theme.config.js.
     return fs.readdirSync(dir, { withFileTypes: true })
         .flatMap((entry) => {
             const absolutePath = path.join(dir, entry.name);

@@ -80,15 +80,6 @@ body {
 
     /* other options */
     --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
-
-    /* layout add-on presets: keep these off unless testing one layout at a time */
-    --addon-library-grid: off; /* makes game/library pages use a grid */
-    --addon-minimal-server-list: off; /* compact server list layout */
-    --addon-minimal-server-menu: off; /* compact server/channel menu layout */
-    --addon-overhead-servers: off; /* moves servers toward the top/header area */
-    --addon-server-drawer-two-grid: off; /* drawer style server list with two columns */
-    --addon-slide-down-status: off; /* status panel slides down instead of staying open */
-    --addon-two-column-server-list: off; /* two-column server list experiment */
 }
 
 /* color options */
