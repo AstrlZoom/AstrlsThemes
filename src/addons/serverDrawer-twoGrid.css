@@ -1,3 +1,5 @@
+/* Copied layout add-on. Two-grid server drawer preset; do not stack with another server-list preset. */
+
 /* Layout preset. Enable with --addon-server-drawer-two-grid: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-server-drawer-two-grid: on) {
 .wrapper-1Rf91z {

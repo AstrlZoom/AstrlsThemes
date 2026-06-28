@@ -1,3 +1,5 @@
+/* Copied cosmetic/tag add-on. Despite the name, this mostly adds hover labels. */
+
 /* grow in with pulse */
 .avatar-2e8lTP[src*="254362351170617345"]:hover + h2:after,
 .avatar-2e8lTP[src*="234148582523928576"]:hover + h2::after,

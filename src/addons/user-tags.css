@@ -1,3 +1,5 @@
+/* Copied layout add-on. Two-column server list/user tag preset. */
+
 /* Layout preset. Enable with --addon-two-column-server-list: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-two-column-server-list: on) {
 

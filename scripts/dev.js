@@ -1,3 +1,5 @@
+/* Live desktop watcher. Writes AstrlGlass to every DEV_OUTPUT_PATH in .env. */
+
 const fs = require('fs');
 const path = require('path');
 const chokidar = require('chokidar');

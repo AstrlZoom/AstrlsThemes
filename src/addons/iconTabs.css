@@ -1,3 +1,5 @@
+/* Copied cosmetic add-on. Converts some DM/channel entries into icon-style tabs. */
+
 .privateChannels-oVe7HL .channel-1Shao0:not([href*="/channels/@me/"]):not([categoryid]) {
   position: relative;
   float: left;

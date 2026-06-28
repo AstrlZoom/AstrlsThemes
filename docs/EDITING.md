@@ -1,10 +1,10 @@
-# Editing Guide
+# AstrlGlass Editing Guide
 
 This project is set up so most changes happen in one file:
 
 `themes/my-discord-theme.theme.css`
 
-Start there when you want to change colors, transparency, the DMs icon bounce, or add-on toggles.
+Start there when you want to change colors, transparency, the DMs icon bounce, add-on toggles, or the visible theme metadata.
 
 ## What To Edit
 
@@ -21,6 +21,8 @@ Start there when you want to change colors, transparency, the DMs icon bounce, o
 - `node_modules/`: installed packages.
 
 If you edit generated files by hand, your changes can disappear the next time the watcher rebuilds.
+
+The project name is AstrlGlass, but the filenames still say `my-discord-theme` so the live dev theme you already enabled in Discord does not need to be re-added.
 
 ## DMs Icon Bounce
 

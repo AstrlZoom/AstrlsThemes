@@ -1,3 +1,5 @@
+/* Builds AstrlGlass from editable src/*.css files into build/ and dist/. */
+
 const fs = require('fs');
 const path = require('path');
 

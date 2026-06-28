@@ -1,3 +1,5 @@
+/* Copied layout add-on. Compact server list preset; do not stack with another server-list preset. */
+
 /* Layout preset. Enable with --addon-minimal-server-list: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-minimal-server-list: on) {
   /*

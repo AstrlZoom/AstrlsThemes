@@ -1,7 +1,7 @@
 /**
- * @name My Discord Theme
- * @description a personal dark, customizable Discord theme.
- * @author tyler
+ * @name AstrlGlass
+ * @description a dark glass Discord theme by AstrlZoom.
+ * @author AstrlZoom
  * @version 1.0.0
  * @source https://github.com/AstrlZoom/MyDiscordTheme
 */
@@ -15,6 +15,8 @@
 
 /* Import the generated module CSS. This raw GitHub URL only works in Discord when the repo is public. */
 /* main.css */
+/* Core AstrlGlass layout: panel spacing, borders, and main Discord surfaces. */
+
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
@@ -567,6 +569,8 @@ body {
 }
 
 /* animations.css */
+/* Small motion settings. Turn them off with --animations in the theme file. */
+
 body {
     --list-item-transition: 0.2s ease; /* transition for list items */
     --dms-icon-svg-transition: 0.95s; /* how long the DMs icon bounce takes */
@@ -616,6 +620,8 @@ body {
 }
 
 /* background-image.css */
+/* Optional in-app background image support. Enable with --background-image. */
+
 body {
     --background-image-url: url('');
 }
@@ -635,6 +641,8 @@ body {
 }
 
 /* chatbar.css */
+/* Chat input sizing and the optional separated chatbar layout. */
+
 body {
     --chatbar-height: 47px; /* height of the chatbar (52px by default, 47px to align it with the user panel) */
 
@@ -759,6 +767,8 @@ body {
 }
 
 /* colors.css */
+/* AstrlGlass color tokens. Most color edits should happen in themes/my-discord-theme.theme.css. */
+
 @property --colors {
     syntax: 'off | on';
     inherits: false;
@@ -1887,6 +1897,8 @@ body {
 }
 
 /* dms-button.css */
+/* Custom DMs/home icon, SVG mask, bounce animation, and shrink prevention. */
+
 body {
     /* DMs/home button icon. Replace this URL if you want a different SVG icon. */
     --dms-icon-svg-url: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjgwMHB4IiB3aWR0aD0iODAwcHgiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzOTIuNjY5IDM5Mi42NjkiIHhtbDpzcGFjZT0icHJlc2VydmUiPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTM2OC44NzMsOTQuMTkzSDExOS43MjVjLTEzLjk2NCwwLTI3LjkyNywxMC43OTYtMzEuNjEyLDI0LjYzTDQ0LjY3MSwyODEuNDc0IGMtNC41OSwxNS41MTUsNi43MjMsMzAuMzg0LDIyLjY5MSwzMC4zODRoMjQ5LjE0N2MxMy45NjQsMCwyNy45MjctMTAuNzk2LDMxLjYxMi0yNC42M2w0My41NzItMTYyLjU4NiBDMzk1Ljg5NSwxMDguNjA5LDM4Ni4xOTgsOTQuOTA0LDM2OC44NzMsOTQuMTkzeiBNMzUwLjMxOSwxMTUuOTc5TDIxOC4wNTMsMjA5LjA3Yy0zLjAzOCwyLjkwOS01LjYyNCwxLjkzOS02LjIwNiwxLjU1MiBsLTgzLjcxNy05NC42NDJIMzUwLjMxOXogTTEwOC42MDYsMTI2LjgzOWw2Ni44NDQsNzUuNTA3TDY5LjY4OSwyNzIuMTY1TDEwOC42MDYsMTI2LjgzOXogTTgyLjIzLDI5MC4wMDdsMTA3Ljc2Ni03MS4xMTEgYzAsMCw2LjAxMiw2Ljc4OCw2LjIwNiw2Ljk4MmM4LjcyNyw4LjY2MywyMi40MzIsOC45ODYsMzQuMTMzLDEuMjkzbDExLjc2Ni04LjI3NWw2OS43NTQsNzEuMTc2SDgyLjIzVjI5MC4wMDd6IE0zMjguNDY5LDI3NS43ODUgbC02OC4zMzEtNjkuNjg5bDEwNy4xODQtNzUuNDQyTDMyOC40NjksMjc1Ljc4NXoiLz4gPGc+IDxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjE3NS40NTEsMjAyLjM0NiAxMDguNjA2LDEyNi44MzkgNjkuNjg5LDI3Mi4xNjUgIi8+IDxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjI2MC4xMzcsMjA2LjE2MSAzMjguNDY5LDI3NS43ODUgMzY3LjMyMSwxMzAuNzE4ICIvPiA8L2c+IDxwYXRoIHN0eWxlPSJmaWxsOiM1NkFDRTA7IiBkPSJNMTk2LjIwMiwyMjUuODc4Yy0wLjEyOS0wLjEyOS02LjIwNi02Ljk4Mi02LjIwNi02Ljk4Mkw4Mi4yMywyOTAuMDA3aDIyOS42MjRsLTY5Ljc1NC03MS4xNzYgbC0xMS43NjYsOC4yNzVDMjE4LjYzNCwyMzQuNzk5LDIwNC45MjksMjM0LjQxMSwxOTYuMjAyLDIyNS44Nzh6Ii8+IDxwYXRoIHN0eWxlPSJmaWxsOiNGRkMxMEQ7IiBkPSJNMzUwLjMxOSwxMTUuOTc5aC0yMjIuMTlsODMuNzE3LDk0LjY0MmMwLjY0NiwwLjM4OCwzLjE2OCwxLjQyMiw2LjIwNi0xLjU1MkwzNTAuMzE5LDExNS45Nzl6Ii8+IDxnPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTEzNi44NTcsNjUuNDI1aDU5LjQ3NWM2LjAxMiwwLDEwLjkyNS00Ljg0OCwxMC45MjUtMTAuOTI1cy00Ljg0OC0xMC45MjUtMTAuOTI1LTEwLjkyNWgtNTkuNDc1IGMtNi4wMTIsMC0xMC45MjUsNC44NDgtMTAuOTI1LDEwLjkyNVMxMzAuNzgsNjUuNDI1LDEzNi44NTcsNjUuNDI1eiIvPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTExNy45OCwzMjcuMjQzSDU4LjUwNWMtNi4wMTIsMC0xMC45MjUsNC44NDgtMTAuOTI1LDEwLjkyNWMwLDYuMDc3LDQuODQ4LDEwLjkyNSwxMC45MjUsMTAuOTI1IGg1OS40MWM2LjAxMiwwLDEwLjkyNS00Ljg0OCwxMC45MjUtMTAuOTI1QzEyOC44NCwzMzIuMDkyLDEyMy45OTIsMzI3LjI0MywxMTcuOTgsMzI3LjI0M3oiLz4gPHBhdGggc3R5bGU9ImZpbGw6IzE5NEY4MjsiIGQ9Ik0xMC45MjUsMTI3LjA5OGg0OC41NDljNi4wMTIsMCwxMC45MjUtNC44NDgsMTAuOTI1LTEwLjkyNWMwLTYuMDEyLTQuODQ4LTEwLjkyNS0xMC45MjUtMTAuOTI1IEgxMC45MjVDNC45MTMsMTA1LjI0NywwLDExMC4wOTYsMCwxMTYuMTczQzAuMDY1LDEyMi4xODUsNC45MTMsMTI3LjA5OCwxMC45MjUsMTI3LjA5OHoiLz4gPHBhdGggc3R5bGU9ImZpbGw6IzE5NEY4MjsiIGQ9Ik00OC42MTQsMTg3LjQ3OGMwLTYuMDEyLTQuODQ4LTEwLjkyNS0xMC45MjUtMTAuOTI1SDEwLjkyNUM0LjkxMywxNzYuNTUyLDAsMTgxLjQwMSwwLDE4Ny40NzggczQuODQ4LDEwLjkyNSwxMC45MjUsMTAuOTI1aDI2Ljc2NEM0My43MDEsMTk4LjMzOCw0OC42MTQsMTkzLjQ5LDQ4LjYxNCwxODcuNDc4eiIvPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTI2Ljc2NCwyNjEuODg2SDEwLjkyNUM0LjkxMywyNjEuODg2LDAsMjY2Ljg2NCwwLDI3Mi44NzZzNC44NDgsMTAuOTI1LDEwLjkyNSwxMC45MjVoMTUuODM4IGM2LjAxMiwwLDEwLjkyNS00Ljg0OCwxMC45MjUtMTAuOTI1UzMyLjg0LDI2MS44ODYsMjYuNzY0LDI2MS44ODZ6Ii8+IDwvZz4gPC9zdmc+"); /* icon svg url. MUST BE A SVG. */
@@ -2119,6 +2131,8 @@ body {
 }
 
 /* top-bar.css */
+/* Top bar height, title placement, and inbox/help button positioning. */
+
 body {
     --top-bar-height: 32px;
     --custom-app-top-bar-height: var(--top-bar-height);
@@ -2446,6 +2460,8 @@ body {
 }
 
 /* transparency-blur.css */
+/* Panel blur and transparent-mode cleanup controlled by theme variables. */
+
 @property --panel-blur {
     syntax: 'off | on';
     inherits: false;
@@ -2515,6 +2531,8 @@ body {
 }
 
 /* user-panel.css */
+/* Optional compact user panel layout. */
+
 @property --small-user-panel {
     syntax: 'off | on';
     inherits: false;
@@ -2538,6 +2556,8 @@ body {
 }
 
 /* window-controls.css */
+/* Custom Windows titlebar buttons. Disable with --custom-window-controls. */
+
 body {
     --window-control-size: 14px;
     --window-controls-padding: calc(var(--gap) - (var(--window-control-size) / 2) + 1px);
@@ -2600,6 +2620,8 @@ body {
 }
 
 /* addons/chatBubbles.css */
+/* Copied cosmetic add-on. Adds chat/category bubble styling. */
+
 /* Make Channel Categories Match Role Categories */
 
 .name-IbjUBS {
@@ -2614,7 +2636,10 @@ body {
 .containerDefault-3GGEv_ {
   background-color: transparent !important;
 }
+
 /* addons/dmSearchBubble.css */
+/* Copied cosmetic add-on. Gives DM/search messages a bubble style. */
+
 .message-2CShn3 {
   background: var(--quaternary-color, #111);
   margin-left: 80px;
@@ -2721,6 +2746,8 @@ body {
 }
 
 /* addons/donator-tags.css */
+/* Copied cosmetic add-on. Adds older custom tag/search styling. */
+
 #app-mount .privateChannels-oVe7HL .searchBar-3TnChZ {
   position: absolute;
   bottom: 20px;
@@ -2797,7 +2824,10 @@ body {
 .privateChannels-oVe7HL .scrollerWrap-2lJEkd .scroller-2FKFPG {
   margin-top: 50px;
 }
+
 /* addons/filter.css */
+/* Copied cosmetic add-on. Adds special user tag labels and effects. */
+
 /* ======= SPECIAL TAGS ========= */
 /* badges */
 .avatar-2e8lTP[src*="166365757561634816"] + h2::after,
@@ -3200,7 +3230,10 @@ body {
   color: #AF616E;
   --main-color: #AF616E;
 }
+
 /* addons/floatingGuildsAdd.css */
+/* Copied layout add-on. Test carefully because it rewrites guild/server positioning. */
+
 html[class="gr__betterdocs_us"] body #app-mount {
   background-size:cover !important;
   background-repeat:no-repeat !important;
@@ -3341,7 +3374,10 @@ letter-spacing: 0 !important;
 .theme-dark body #app-mount .wrapper-35wsBm .icon-3o6xvg[style*="/icons/153708594091655168" i]::before, .theme-dark body #app-mount .embed-IeVjo6 .embedLink-1G1K1D[href*="www.discordsource." i]::before, .theme-dark body #app-mount .embed-IeVjo6 .embedLink-1G1K1D[href*="://discordsource." i]::before, .theme-dark body #app-mount .embed-IeVjo6 .embedLink-1G1K1D[href*="www.betterdocs." i]::before, .theme-dark body #app-mount .embed-IeVjo6 .embedLink-1G1K1D[href*="://betterdocs." i]::before {
   display: none !important
 }
+
 /* addons/iconTabs-disabledGames.css */
+/* Copied add-on. Kept disabled/upstream-style for reference. */
+
 /* disabled under further notice */
 
 /*.listItem-2P_4kh:last-child,
@@ -3382,7 +3418,10 @@ letter-spacing: 0 !important;
   background: linear-gradient(to bottom, rgba(48, 48, 48, 0) 0%, var(--quaternary-color) 60%, var(--quaternary-color) 100%);
   pointer-events: none;
 }
+
 /* addons/iconTabs.css */
+/* Copied cosmetic add-on. Converts some DM/channel entries into icon-style tabs. */
+
 .privateChannels-oVe7HL .channel-1Shao0:not([href*="/channels/@me/"]):not([categoryid]) {
   position: relative;
   float: left;
@@ -3430,7 +3469,10 @@ html .tabBadge-h4HGed {
   position: absolute;
   transform: translate(50%, -50%);
 }
+
 /* addons/libraryGrid.css */
+/* Copied layout add-on. Enable only when you want the library grid preset. */
+
 /* Layout preset. Enable with --addon-library-grid: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-library-grid: on) {
 .privateChannels-oVe7HL .channel-1Shao0:not([href*="/channels/@me/"]):not([categoryid]) {
@@ -3483,6 +3525,8 @@ html .tabBadge-h4HGed {
 }
 
 /* addons/minimalServerList.css */
+/* Copied layout add-on. Compact server list preset; do not stack with another server-list preset. */
+
 /* Layout preset. Enable with --addon-minimal-server-list: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-minimal-server-list: on) {
   /*
@@ -3855,6 +3899,8 @@ html .tabBadge-h4HGed {
 }
 
 /* addons/minimalServerMenu.css */
+/* Copied layout add-on. Compact server/channel menu preset. */
+
 /* Layout preset. Enable with --addon-minimal-server-menu: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-minimal-server-menu: on) {
 :root {
@@ -3905,6 +3951,8 @@ html .tabBadge-h4HGed {
 }
 
 /* addons/minimalUserList.css */
+/* Copied cosmetic/layout add-on. Changes user list and popout spacing. */
+
 .layer-2aCOJ3[style*="; top: 5"][id*="popout_"] .itemBase-1Qj4z6 {
   margin: 0;
   padding: 10px 25px;
@@ -3961,7 +4009,10 @@ html .tabBadge-h4HGed {
     transform: translateX(-40%)  translateY(12px) translateZ(1px) perspective(1px) scale(1);
   }
 }
+
 /* addons/overHeadServers.css */
+/* Copied layout add-on. Moves member/server surfaces toward an overhead layout. */
+
 /* Layout preset. Enable with --addon-overhead-servers: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-overhead-servers: on) {
 .membersWrap-3NUR2t {
@@ -4077,6 +4128,8 @@ html .tabBadge-h4HGed {
 }
 
 /* addons/serverDrawer-oneGrid.css */
+/* Copied layout add-on. One-grid server drawer experiment; test alone first. */
+
 /* #app-mount .player-3zB-0D:hover {
   background-color: var(--quaternary-color);
 }
@@ -4244,7 +4297,10 @@ div[style*="transform: scale(1)"] .pill-1m5BUr {
   top: 116px !important;
   left: 5px !important;
 } */
+
 /* addons/serverDrawer-twoGrid.css */
+/* Copied layout add-on. Two-grid server drawer preset; do not stack with another server-list preset. */
+
 /* Layout preset. Enable with --addon-server-drawer-two-grid: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-server-drawer-two-grid: on) {
 .wrapper-1Rf91z {
@@ -4362,6 +4418,8 @@ div[style*="transform: scale(1)"] .pill-1m5BUr {
 }
 
 /* addons/slideDownStatus.css */
+/* Copied layout add-on. Slide-down status/server-list preset. */
+
 /* Layout preset. Enable with --addon-slide-down-status: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-slide-down-status: on) {
 /* server grid */
@@ -4447,6 +4505,8 @@ div[style*="transform: scale(1)"] .pill-1m5BUr {
 }
 
 /* addons/tag-animations.css */
+/* Copied cosmetic add-on. Animates status/tag menus and popouts. */
+
 :root {
   --online: #43b581;
   --idle: #faa61a;
@@ -4735,7 +4795,10 @@ transition: all .2s ease-in-out;
     pointer-events: all;
   }
 }
+
 /* addons/twoColumnServer.css */
+/* Copied cosmetic/tag add-on. Despite the name, this mostly adds hover labels. */
+
 /* grow in with pulse */
 .avatar-2e8lTP[src*="254362351170617345"]:hover + h2:after,
 .avatar-2e8lTP[src*="234148582523928576"]:hover + h2::after,
@@ -4869,7 +4932,10 @@ transition: all .2s ease-in-out;
     -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
   }
 }
+
 /* addons/user-tags.css */
+/* Copied layout add-on. Two-column server list/user tag preset. */
+
 /* Layout preset. Enable with --addon-two-column-server-list: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-two-column-server-list: on) {
 
@@ -5050,6 +5116,8 @@ div[style*="transform: scale(1)"] .pill-1m5BUr {
 }
 
 /* addons/userSettingsModal.css */
+/* Copied cosmetic add-on. Adds user tags and user-settings modal tweaks. */
+
 :root {
   --mc: var(--main-color);
 }
@@ -5176,7 +5244,10 @@ div[style*="transform: scale(1)"] .pill-1m5BUr {
   font-family: "BMTicons";
   src: url(data:application/font-ttf;charset=utf-8;base64,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) format("truetype");
 }
+
 /* addons/yeet.css */
+/* Copied settings-modal add-on. Changes the full settings screen layout. */
+
 :root {
 	--size: 70%;
 }

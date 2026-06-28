@@ -1,3 +1,5 @@
+/* Custom Windows titlebar buttons. Disable with --custom-window-controls. */
+
 body {
     --window-control-size: 14px;
     --window-controls-padding: calc(var(--gap) - (var(--window-control-size) / 2) + 1px);

@@ -18,7 +18,7 @@ function rebuild(reason) {
     try {
         cached = buildCombinedTheme();
         version += 1;
-        console.log(`[${new Date().toLocaleTimeString()}] rebuilt (${cached.length} bytes) — ${reason}`);
+        console.log(`[${new Date().toLocaleTimeString()}] rebuilt (${cached.length} bytes) - ${reason}`);
     } catch (error) {
         console.error('build failed:', error.message);
     }

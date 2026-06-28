@@ -1,3 +1,5 @@
+/* Copied layout add-on. Moves member/server surfaces toward an overhead layout. */
+
 /* Layout preset. Enable with --addon-overhead-servers: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-overhead-servers: on) {
 .membersWrap-3NUR2t {

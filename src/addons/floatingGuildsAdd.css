@@ -1,3 +1,5 @@
+/* Copied layout add-on. Test carefully because it rewrites guild/server positioning. */
+
 html[class="gr__betterdocs_us"] body #app-mount {
   background-size:cover !important;
   background-repeat:no-repeat !important;

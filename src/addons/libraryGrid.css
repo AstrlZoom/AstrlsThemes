@@ -1,3 +1,5 @@
+/* Copied layout add-on. Enable only when you want the library grid preset. */
+
 /* Layout preset. Enable with --addon-library-grid: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-library-grid: on) {
 .privateChannels-oVe7HL .channel-1Shao0:not([href*="/channels/@me/"]):not([categoryid]) {

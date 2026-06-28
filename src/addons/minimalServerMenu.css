@@ -1,3 +1,5 @@
+/* Copied layout add-on. Compact server/channel menu preset. */
+
 /* Layout preset. Enable with --addon-minimal-server-menu: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-minimal-server-menu: on) {
 :root {

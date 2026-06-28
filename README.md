@@ -1,8 +1,10 @@
-# My Discord Theme
+# AstrlGlass
 
-A personal Discord theme project based on the MIT-licensed `midnight-discord` theme.
+AstrlGlass is a personal dark glass Discord theme by AstrlZoom, based on the MIT-licensed `midnight-discord` theme.
 
-This copy is separated from the original fork checkout. It has its own theme name and its own GitHub repo at `https://github.com/AstrlZoom/MyDiscordTheme`.
+This copy is separated from the original fork checkout. It has its own theme metadata and its own GitHub repo at `https://github.com/AstrlZoom/MyDiscordTheme`.
+
+The editable and generated files still use `my-discord-theme` in their filenames so your current live Discord setup keeps working.
 
 For a beginner-friendly map of what to edit, read `docs/EDITING.md`.
 
@@ -94,7 +96,7 @@ The injected theme checks for rebuilds every second and reloads automatically.
 
 This repo now uses real GitHub URLs in `themes/my-discord-theme.theme.css` and `scripts/theme.config.js`.
 
-Private repos are fine for saving your work, but Discord cannot load a private raw GitHub CSS URL for other people. If you make the repo public later, commit `build/my-discord-theme.css` so the online import has something to load.
+Private repos are fine for saving your work, but Discord cannot load a private raw GitHub CSS URL for other people. If you make the repo public later, keep `build/my-discord-theme.css` committed so the online import has something to load.
 
 For local installs, use `dist/my-discord-theme.theme.css` or the live dev theme file.
 

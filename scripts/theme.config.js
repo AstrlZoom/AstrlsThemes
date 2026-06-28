@@ -1,3 +1,7 @@
+/*
+ * Build settings for AstrlGlass.
+ * Change paths only when you intentionally rename files or add/remove CSS modules.
+ */
 module.exports = {
     // Main editable theme file. This has the BetterDiscord/Vencord metadata and user-facing variables.
     baseFile: 'themes/my-discord-theme.theme.css',
@@ -8,7 +12,7 @@ module.exports = {
     // Must exactly match the @import line in the base theme file.
     buildImport:
         "@import url('https://raw.githubusercontent.com/AstrlZoom/MyDiscordTheme/main/build/my-discord-theme.css');",
-    displayName: 'my-discord-theme',
+    displayName: 'AstrlGlass',
     // Source order matters. Earlier files set basics; later files can override them.
     sourceFiles: [
         'main.css',

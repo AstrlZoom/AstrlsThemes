@@ -11,7 +11,7 @@ window.__themeDev?.off?.();
 
     async function checkedFetch(url) {
         const response = await fetch(url);
-        if (!response.ok) throw new Error(`${response.status} ${response.statusText} — ${url}`);
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText} - ${url}`);
         return response;
     }
 
@@ -255,6 +255,6 @@ window.__themeDev?.off?.();
 
     reload().then((length) => {
         start();
-        console.log(`[${DISPLAY_NAME}] injected ${length}b — auto-reload on. helpers: window.__themeDev`);
+        console.log(`[${DISPLAY_NAME}] injected ${length}b - auto-reload on. helpers: window.__themeDev`);
     }).catch((error) => console.error(`[${DISPLAY_NAME}] inject failed:`, error));
 })();

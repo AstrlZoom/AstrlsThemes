@@ -1,3 +1,5 @@
+/* Optional in-app background image support. Enable with --background-image. */
+
 body {
     --background-image-url: url('');
 }

@@ -1,6 +1,6 @@
-# My Discord Theme
+# AstrlGlass
 
-A personal CSS theme for Discord, derived from `midnight-discord`.
+A personal CSS theme for Discord by AstrlZoom, derived from `midnight-discord`.
 
 ## Layout
 
@@ -13,6 +13,8 @@ A personal CSS theme for Discord, derived from `midnight-discord`.
 - `scripts/theme.config.js` owns paths, display name, build import, and source order.
 - `scripts/dev.js` watches files and writes the combined theme to `DEV_OUTPUT_PATH`.
 - `scripts/serve.js` serves a browser-injected live theme at `http://127.0.0.1:8765`.
+
+The public theme name is AstrlGlass. Keep the `my-discord-theme` filenames unless the user's live Discord setup is updated too.
 
 ## Rules
 

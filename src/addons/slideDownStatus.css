@@ -1,3 +1,5 @@
+/* Copied layout add-on. Slide-down status/server-list preset. */
+
 /* Layout preset. Enable with --addon-slide-down-status: on in themes/my-discord-theme.theme.css. */
 @container body style(--addon-slide-down-status: on) {
 /* server grid */
