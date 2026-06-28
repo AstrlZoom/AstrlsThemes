@@ -1,4 +1,4 @@
-/* AstrlGlass color tokens. Most color edits should happen in themes/my-discord-theme.theme.css. */
+/* AstrlGlass color tokens. Most color edits should happen in themes/AstrlGlass.theme.css. */
 
 @property --colors {
     syntax: 'off | on';

@@ -13,7 +13,7 @@
  * in src/*.css and gets built into the imported file.
  */
 
-/* Import the generated module CSS. This raw GitHub URL only works in Discord when the repo is public. */
+/* Import the generated module CSS from this public GitHub repo. */
 /* main.css */
 /* Core AstrlGlass layout: panel spacing, borders, and main Discord surfaces. */
 
@@ -767,7 +767,7 @@ body {
 }
 
 /* colors.css */
-/* AstrlGlass color tokens. Most color edits should happen in themes/my-discord-theme.theme.css. */
+/* AstrlGlass color tokens. Most color edits should happen in themes/AstrlGlass.theme.css. */
 
 @property --colors {
     syntax: 'off | on';
@@ -2553,7 +2553,7 @@ body {
  * Desktop transparency support.
  * This only matters if Vencord/BetterDiscord/your client allows the Discord
  * window itself to be transparent. The tint and blur amounts are edited in
- * themes/my-discord-theme.theme.css.
+ * themes/AstrlGlass.theme.css.
  */
 
 html,

@@ -13,8 +13,8 @@
  * in src/*.css and gets built into the imported file.
  */
 
-/* Import the generated module CSS. This raw GitHub URL only works in Discord when the repo is public. */
-@import url('https://raw.githubusercontent.com/AstrlZoom/MyDiscordTheme/main/build/my-discord-theme.css');
+/* Import the generated module CSS from this public GitHub repo. */
+@import url('https://raw.githubusercontent.com/AstrlZoom/MyDiscordTheme/main/build/AstrlGlass.css');
 
 body {
     /* font options */
