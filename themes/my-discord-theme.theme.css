@@ -3,11 +3,18 @@
  * @description a personal dark, customizable Discord theme.
  * @author tyler
  * @version 1.0.0
- * @source https://example.com/my-discord-theme
+ * @source https://github.com/AstrlZoom/MyDiscordTheme
 */
 
-/* import theme modules */
-@import url('https://example.com/my-discord-theme/build/my-discord-theme.css');
+/*
+ * This is the beginner-friendly settings file.
+ * Most edits are made by changing the values below from off to on, changing
+ * pixel numbers, or swapping colors. The harder Discord selector code lives
+ * in src/*.css and gets built into the imported file.
+ */
+
+/* Import the generated module CSS. This raw GitHub URL only works in Discord when the repo is public. */
+@import url('https://raw.githubusercontent.com/AstrlZoom/MyDiscordTheme/main/build/my-discord-theme.css');
 
 body {
     /* font options */
@@ -23,7 +30,12 @@ body {
     /* animation/transition options */
     --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
     --list-item-transition: 0.2s ease; /* transition for list items */
-    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+    --dms-icon-svg-transition: 0.95s; /* DMs icon bounce speed. Higher = slower */
+    --dms-icon-bounce-up: -8px; /* DMs hover bounce height. More negative = jumps higher */
+    --dms-icon-bounce-down: 3px; /* DMs hover dip after jumping. Higher = more dramatic */
+    --dms-icon-bounce-settle: -2px; /* DMs final small hop before it returns to normal */
+    --dms-icon-click-up: -6px; /* DMs click bounce height */
+    --dms-icon-click-down: 2px; /* DMs click dip after jumping */
     --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
 
     /* top bar options */
@@ -38,7 +50,8 @@ body {
 
     /* dms button options */
     --custom-dms-icon: custom; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
-    --dms-icon-svg-url: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Cpath%20d='M283.211%20512c78.962%200%20151.079-35.925%20198.857-94.792%207.068-8.708-.639-21.43-11.562-19.35-124.203%2023.654-238.262-71.576-238.262-196.954%200-72.222%2038.662-138.635%20101.498-174.394%209.686-5.512%207.25-20.197-3.756-22.23A258.156%20258.156%200%200%200%20283.211%200c-141.309%200-256%20114.511-256%20256%200%20141.309%20114.511%20256%20256%20256z'/%3E%3C/svg%3E"); /* icon svg url. MUST BE A SVG. */
+    /* Advanced: this is a pasted SVG data URL. Use an SVG-to-data-URL tool if you swap it. */
+    --dms-icon-svg-url: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjgwMHB4IiB3aWR0aD0iODAwcHgiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzOTIuNjY5IDM5Mi42NjkiIHhtbDpzcGFjZT0icHJlc2VydmUiPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTM2OC44NzMsOTQuMTkzSDExOS43MjVjLTEzLjk2NCwwLTI3LjkyNywxMC43OTYtMzEuNjEyLDI0LjYzTDQ0LjY3MSwyODEuNDc0IGMtNC41OSwxNS41MTUsNi43MjMsMzAuMzg0LDIyLjY5MSwzMC4zODRoMjQ5LjE0N2MxMy45NjQsMCwyNy45MjctMTAuNzk2LDMxLjYxMi0yNC42M2w0My41NzItMTYyLjU4NiBDMzk1Ljg5NSwxMDguNjA5LDM4Ni4xOTgsOTQuOTA0LDM2OC44NzMsOTQuMTkzeiBNMzUwLjMxOSwxMTUuOTc5TDIxOC4wNTMsMjA5LjA3Yy0zLjAzOCwyLjkwOS01LjYyNCwxLjkzOS02LjIwNiwxLjU1MiBsLTgzLjcxNy05NC42NDJIMzUwLjMxOXogTTEwOC42MDYsMTI2LjgzOWw2Ni44NDQsNzUuNTA3TDY5LjY4OSwyNzIuMTY1TDEwOC42MDYsMTI2LjgzOXogTTgyLjIzLDI5MC4wMDdsMTA3Ljc2Ni03MS4xMTEgYzAsMCw2LjAxMiw2Ljc4OCw2LjIwNiw2Ljk4MmM4LjcyNyw4LjY2MywyMi40MzIsOC45ODYsMzQuMTMzLDEuMjkzbDExLjc2Ni04LjI3NWw2OS43NTQsNzEuMTc2SDgyLjIzVjI5MC4wMDd6IE0zMjguNDY5LDI3NS43ODUgbC02OC4zMzEtNjkuNjg5bDEwNy4xODQtNzUuNDQyTDMyOC40NjksMjc1Ljc4NXoiLz4gPGc+IDxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjE3NS40NTEsMjAyLjM0NiAxMDguNjA2LDEyNi44MzkgNjkuNjg5LDI3Mi4xNjUgIi8+IDxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjI2MC4xMzcsMjA2LjE2MSAzMjguNDY5LDI3NS43ODUgMzY3LjMyMSwxMzAuNzE4ICIvPiA8L2c+IDxwYXRoIHN0eWxlPSJmaWxsOiM1NkFDRTA7IiBkPSJNMTk2LjIwMiwyMjUuODc4Yy0wLjEyOS0wLjEyOS02LjIwNi02Ljk4Mi02LjIwNi02Ljk4Mkw4Mi4yMywyOTAuMDA3aDIyOS42MjRsLTY5Ljc1NC03MS4xNzYgbC0xMS43NjYsOC4yNzVDMjE4LjYzNCwyMzQuNzk5LDIwNC45MjksMjM0LjQxMSwxOTYuMjAyLDIyNS44Nzh6Ii8+IDxwYXRoIHN0eWxlPSJmaWxsOiNGRkMxMEQ7IiBkPSJNMzUwLjMxOSwxMTUuOTc5aC0yMjIuMTlsODMuNzE3LDk0LjY0MmMwLjY0NiwwLjM4OCwzLjE2OCwxLjQyMiw2LjIwNi0xLjU1MkwzNTAuMzE5LDExNS45Nzl6Ii8+IDxnPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTEzNi44NTcsNjUuNDI1aDU5LjQ3NWM2LjAxMiwwLDEwLjkyNS00Ljg0OCwxMC45MjUtMTAuOTI1cy00Ljg0OC0xMC45MjUtMTAuOTI1LTEwLjkyNWgtNTkuNDc1IGMtNi4wMTIsMC0xMC45MjUsNC44NDgtMTAuOTI1LDEwLjkyNVMxMzAuNzgsNjUuNDI1LDEzNi44NTcsNjUuNDI1eiIvPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTExNy45OCwzMjcuMjQzSDU4LjUwNWMtNi4wMTIsMC0xMC45MjUsNC44NDgtMTAuOTI1LDEwLjkyNWMwLDYuMDc3LDQuODQ4LDEwLjkyNSwxMC45MjUsMTAuOTI1IGg1OS40MWM2LjAxMiwwLDEwLjkyNS00Ljg0OCwxMC45MjUtMTAuOTI1QzEyOC44NCwzMzIuMDkyLDEyMy45OTIsMzI3LjI0MywxMTcuOTgsMzI3LjI0M3oiLz4gPHBhdGggc3R5bGU9ImZpbGw6IzE5NEY4MjsiIGQ9Ik0xMC45MjUsMTI3LjA5OGg0OC41NDljNi4wMTIsMCwxMC45MjUtNC44NDgsMTAuOTI1LTEwLjkyNWMwLTYuMDEyLTQuODQ4LTEwLjkyNS0xMC45MjUtMTAuOTI1IEgxMC45MjVDNC45MTMsMTA1LjI0NywwLDExMC4wOTYsMCwxMTYuMTczQzAuMDY1LDEyMi4xODUsNC45MTMsMTI3LjA5OCwxMC45MjUsMTI3LjA5OHoiLz4gPHBhdGggc3R5bGU9ImZpbGw6IzE5NEY4MjsiIGQ9Ik00OC42MTQsMTg3LjQ3OGMwLTYuMDEyLTQuODQ4LTEwLjkyNS0xMC45MjUtMTAuOTI1SDEwLjkyNUM0LjkxMywxNzYuNTUyLDAsMTgxLjQwMSwwLDE4Ny40NzggczQuODQ4LDEwLjkyNSwxMC45MjUsMTAuOTI1aDI2Ljc2NEM0My43MDEsMTk4LjMzOCw0OC42MTQsMTkzLjQ5LDQ4LjYxNCwxODcuNDc4eiIvPiA8cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTI2Ljc2NCwyNjEuODg2SDEwLjkyNUM0LjkxMywyNjEuODg2LDAsMjY2Ljg2NCwwLDI3Mi44NzZzNC44NDgsMTAuOTI1LDEwLjkyNSwxMC45MjVoMTUuODM4IGM2LjAxMiwwLDEwLjkyNS00Ljg0OCwxMC45MjUtMTAuOTI1UzMyLjg0LDI2MS44ODYsMjYuNzY0LDI2MS44ODZ6Ii8+IDwvZz4gPC9zdmc+"); /* icon svg url. MUST BE A SVG. */
     --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
     --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
     --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
@@ -53,11 +66,13 @@ body {
 
     /* transparency/blur options */
     /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
-    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+    --transparency-tweaks: on; /* off: no changes, on: remove some elements for better transparency */
     --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
-    --panel-blur: off; /* off: no changes, on: blur the background of panels */
-    --blur-amount: 12px; /* amount of blur */
-    --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+    --panel-blur: on; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 18px; /* amount of blur */
+    --desktop-tint: hsla(220, 18%, 7%, 0.34); /* dark glass layer over the desktop */
+    --desktop-blur-amount: 22px; /* blur applied to the transparent app background */
+    --bg-floating: hsla(220, 15%, 10%, 0.72); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
 
     /* chatbar options */
     --custom-chatbar: off; /* off: default chatbar, separated: chatbar separated from chat */
@@ -65,6 +80,15 @@ body {
 
     /* other options */
     --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+
+    /* layout add-on presets: keep these off unless testing one layout at a time */
+    --addon-library-grid: off; /* makes game/library pages use a grid */
+    --addon-minimal-server-list: off; /* compact server list layout */
+    --addon-minimal-server-menu: off; /* compact server/channel menu layout */
+    --addon-overhead-servers: off; /* moves servers toward the top/header area */
+    --addon-server-drawer-two-grid: off; /* drawer style server list with two columns */
+    --addon-slide-down-status: off; /* status panel slides down instead of staying open */
+    --addon-two-column-server-list: off; /* two-column server list experiment */
 }
 
 /* color options */
@@ -80,14 +104,14 @@ body {
     --text-5: hsl(220, 15%, 25%); /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: hsla(220, 15%, 20%, 1); /* dark buttons when clicked */
-    --bg-2: hsla(220, 15%, 16%, 1); /* dark buttons */
-    --bg-3: hsla(220, 15%, 13%, 1); /* spacing, secondary elements */
-    --bg-4: hsla(220, 15%, 10%, 1); /* main background color */
-    --hover: hsla(221, 19%, 40%, 0.1); /* channels and buttons when hovered */
-    --active: hsla(220, 19%, 40%, 0.2); /* channels and buttons when clicked or selected */
+    --bg-1: hsla(220, 15%, 20%, 0.7); /* dark buttons when clicked */
+    --bg-2: hsla(220, 15%, 16%, 0.6); /* dark buttons */
+    --bg-3: hsla(220, 15%, 13%, 0.5); /* spacing, secondary elements */
+    --bg-4: hsla(220, 15%, 10%, 0.4); /* main background color */
+    --hover: hsla(221, 19%, 40%, 0.14); /* channels and buttons when hovered */
+    --active: hsla(220, 19%, 40%, 0.22); /* channels and buttons when clicked or selected */
     --active-2: hsla(220, 19%, 40%, 0.3); /* extra state for transparent buttons */
-    --message-hover: hsla(220, 0%, 0%, 0.1); /* messages when hovered */
+    --message-hover: hsla(220, 0%, 0%, 0.12); /* messages when hovered */
 
     /* accent colors */
     --accent-1: var(--blue-1); /* links and other accent text */

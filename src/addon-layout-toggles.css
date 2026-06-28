@@ -1,0 +1,47 @@
+/*
+ * Add-on on/off switches.
+ * The real toggle values live in themes/my-discord-theme.theme.css.
+ * These @property blocks tell Discord/CSS that each switch only accepts off or on.
+ */
+
+@property --addon-library-grid {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
+@property --addon-minimal-server-list {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
+@property --addon-minimal-server-menu {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
+@property --addon-overhead-servers {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
+@property --addon-server-drawer-two-grid {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
+@property --addon-slide-down-status {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
+@property --addon-two-column-server-list {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}

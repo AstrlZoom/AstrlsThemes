@@ -1,0 +1,50 @@
+/*
+ * Desktop transparency support.
+ * This only matters if Vencord/BetterDiscord/your client allows the Discord
+ * window itself to be transparent. The tint and blur amounts are edited in
+ * themes/my-discord-theme.theme.css.
+ */
+
+html,
+body,
+#app-mount {
+    background: transparent !important;
+}
+
+#app-mount [class^='appMount_'],
+#app-mount [class*=' appMount_'],
+#app-mount [class^='app_'],
+#app-mount [class*=' app_'],
+#app-mount [class^='layers_'],
+#app-mount [class*=' layers_'],
+#app-mount [class^='layer_'],
+#app-mount [class*=' layer_'] {
+    background: transparent !important;
+}
+
+#app-mount .bg__960e4 {
+    /* Main glass layer over the desktop wallpaper. */
+    background: var(--desktop-tint) !important;
+    backdrop-filter: blur(var(--desktop-blur-amount)) saturate(1.08);
+}
+
+#app-mount .bg__960e4::before {
+    /* Extra overlay so panels still read clearly on bright wallpapers. */
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: var(--desktop-tint);
+    backdrop-filter: blur(var(--desktop-blur-amount)) saturate(1.08);
+}
+
+#app-mount [class^='base_'],
+#app-mount [class*=' base_'],
+#app-mount [class^='content_'],
+#app-mount [class*=' content_'],
+#app-mount [class^='page_'],
+#app-mount [class*=' page_'],
+#app-mount [class^='chat_'],
+#app-mount [class*=' chat_'] {
+    background-color: transparent !important;
+}

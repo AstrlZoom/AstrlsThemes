@@ -1,0 +1,20 @@
+/*
+ * Compatibility variables for copied add-ons.
+ * Many add-ons expect variable names from other themes. These map those names
+ * back to this theme's colors so the add-ons blend in.
+ */
+
+:root,
+body {
+    --main-color: var(--accent-2);
+    --hover-color: var(--accent-3);
+    --primary-color: var(--bg-3);
+    --secondary-color: var(--bg-2);
+    --tertiary-color: var(--bg-3);
+    --quaternary-color: var(--bg-4);
+    --shadow: hsla(0, 0%, 0%, 0.35);
+    --roundness: 14px;
+    --user-roundness: var(--roundness);
+    --mc: var(--main-color);
+    --popup-background: var(--bg-floating);
+}
