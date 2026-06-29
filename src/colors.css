@@ -16,12 +16,12 @@
     --astrl-plum: #8f2d56; /* deep berry accent from the palette */
 
     /* text colors */
-    --text-0: #06090a; /* text on bright colored elements */
-    --text-1: #080b0c; /* strongest text on cream panels */
-    --text-2: #111516; /* headings and important text */
-    --text-3: #1f2525; /* normal text */
-    --text-4: #343b39; /* icon buttons and channels */
-    --text-5: #4b504b; /* muted channels/chats and timestamps */
+    --text-0: #061014; /* text on bright colored elements */
+    --text-1: #fff6ec; /* strongest text on dark glass panels */
+    --text-2: #f2e9de; /* headings and important text */
+    --text-3: #ddd5ca; /* normal text */
+    --text-4: #c2bab0; /* icon buttons and channels */
+    --text-5: #9f998f; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
     --bg-1: rgba(68, 70, 66, 0.34); /* buttons when clicked */

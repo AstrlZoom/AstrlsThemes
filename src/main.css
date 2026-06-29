@@ -47,9 +47,9 @@ body {
 
     /* pastel glow defaults. The public theme file turns this on. */
     --pastel-glow: off;
-    --pastel-glow-opacity: 0.2;
-    --pastel-glow-size: 6px;
-    --pastel-icon-glow-size: 5px;
+    --pastel-glow-opacity: 0.16;
+    --pastel-glow-size: 4px;
+    --pastel-icon-glow-size: 3px;
 }
 
 @container body style(--pastel-glow: on) {
