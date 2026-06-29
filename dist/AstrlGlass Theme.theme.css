@@ -19,6 +19,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@property --pastel-glow {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
 :root {
     container-name: root;
 
@@ -55,6 +61,37 @@ body {
     --liquid-glass-shine-opacity: 0.12;
     --liquid-glass-edge-opacity: 0.24;
     --liquid-glass-shadow-opacity: 0.22;
+
+    /* pastel glow defaults. The public theme file turns this on. */
+    --pastel-glow: off;
+    --pastel-glow-opacity: 0.2;
+    --pastel-glow-size: 6px;
+    --pastel-icon-glow-size: 5px;
+}
+
+@container body style(--pastel-glow: on) {
+    #app-mount {
+        --pastel-rainbow-blue: rgba(157, 234, 255, var(--pastel-glow-opacity));
+        --pastel-rainbow-green: rgba(132, 242, 214, var(--pastel-glow-opacity));
+        --pastel-rainbow-cream: rgba(255, 228, 184, var(--pastel-glow-opacity));
+        --pastel-rainbow-pink: rgba(240, 183, 179, var(--pastel-glow-opacity));
+        --pastel-text-glow:
+            0 0 calc(var(--pastel-glow-size) * 0.65) var(--pastel-rainbow-blue),
+            1px 1px var(--pastel-glow-size) var(--pastel-rainbow-pink),
+            -1px 1px var(--pastel-glow-size) var(--pastel-rainbow-cream);
+        --pastel-icon-glow-filter:
+            drop-shadow(0 0 calc(var(--pastel-icon-glow-size) * 0.8) var(--pastel-rainbow-blue))
+            drop-shadow(1px 1px var(--pastel-icon-glow-size) var(--pastel-rainbow-pink))
+            drop-shadow(-1px 1px var(--pastel-icon-glow-size) var(--pastel-rainbow-green));
+    }
+
+    #app-mount :where(div, span, p, a, button, label, strong, em, code, time, h1, h2, h3, h4, h5, h6, input, textarea) {
+        text-shadow: var(--pastel-text-glow);
+    }
+
+    #app-mount :where(svg, [class*='icon_'], [class*='Icon_'], [class*='buttonIcon_'], [class*='ButtonIcon_']) {
+        filter: var(--pastel-icon-glow-filter);
+    }
 }
 
 /* panel separation */
@@ -816,12 +853,12 @@ body {
     --text-5: #4b504b; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: rgba(92, 96, 91, 0.36); /* buttons when clicked */
-    --bg-2: rgba(156, 148, 137, 0.32); /* buttons and controls */
-    --bg-3: rgba(184, 176, 164, 0.46); /* spacing, secondary elements */
-    --bg-4: rgba(196, 188, 176, 0.54); /* main darker grey-cream glass background */
-    --hover: rgba(5, 47, 95, 0.09); /* channels and buttons when hovered */
-    --active: rgba(5, 47, 95, 0.16); /* channels and buttons when clicked or selected */
+    --bg-1: rgba(68, 70, 66, 0.34); /* buttons when clicked */
+    --bg-2: rgba(112, 105, 96, 0.28); /* buttons and controls */
+    --bg-3: rgba(118, 112, 104, 0.34); /* spacing, secondary elements */
+    --bg-4: rgba(124, 118, 110, 0.42); /* main darker grey-cream glass background */
+    --hover: rgba(5, 47, 95, 0.11); /* channels and buttons when hovered */
+    --active: rgba(5, 47, 95, 0.2); /* channels and buttons when clicked or selected */
     --active-2: rgba(143, 45, 86, 0.14); /* extra state for transparent buttons */
     --message-hover: rgba(5, 47, 95, 0.06); /* messages when hovered */
 
@@ -2481,20 +2518,20 @@ body {
         --panel-background:
             radial-gradient(
                 140% 90% at 10% 0%,
-                rgba(255, 248, 238, var(--liquid-glass-shine-opacity)),
+                rgba(255, 241, 225, var(--liquid-glass-shine-opacity)),
                 transparent 34%
             ),
-            radial-gradient(90% 85% at 95% 10%, rgba(255, 255, 255, 0.08), transparent 48%),
-            radial-gradient(100% 70% at 50% 105%, rgba(143, 137, 127, 0.12), transparent 60%),
-            linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(210, 202, 190, 0.08) 42%, rgba(5, 47, 95, 0.035)),
+            radial-gradient(90% 85% at 95% 10%, rgba(255, 255, 255, 0.04), transparent 48%),
+            radial-gradient(100% 70% at 50% 105%, rgba(20, 18, 16, 0.14), transparent 60%),
+            linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(190, 181, 168, 0.035) 42%, rgba(5, 47, 95, 0.025)),
             var(--background-base-lower);
         --panel-box-shadow:
-            inset 0 1px 1px rgba(255, 248, 238, var(--liquid-glass-edge-opacity)),
-            inset 0 10px 22px rgba(255, 248, 238, 0.08),
-            inset 1px 0 0 rgba(255, 255, 255, 0.07),
-            inset -1px 0 0 rgba(5, 47, 95, 0.07),
-            inset 0 -16px 26px rgba(54, 45, 38, 0.13),
-            0 18px 46px rgba(25, 23, 20, var(--liquid-glass-shadow-opacity));
+            inset 0 1px 1px rgba(255, 241, 225, var(--liquid-glass-edge-opacity)),
+            inset 0 10px 22px rgba(255, 241, 225, 0.06),
+            inset 1px 0 0 rgba(255, 255, 255, 0.055),
+            inset -1px 0 0 rgba(5, 47, 95, 0.06),
+            inset 0 -18px 28px rgba(18, 16, 14, 0.2),
+            0 18px 46px rgba(5, 4, 3, var(--liquid-glass-shadow-opacity));
     }
 }
 
@@ -2987,21 +3024,27 @@ body {
     --background-image-url: url(''); /* url of the background image */
 
     /* transparency/blur options */
-    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: rgba(196, 188, 176, 0.54); */
+    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: rgba(124, 118, 110, 0.42); */
     --transparency-tweaks: on; /* off: no changes, on: remove some elements for better transparency */
     --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
     --panel-blur: on; /* off: no changes, on: blur the background of panels */
     --blur-amount: 30px; /* amount of blur */
     --liquid-glass: on; /* off: flat glass, on: liquid glass highlights and depth */
     --liquid-glass-refraction: on; /* off: blur only, on: SVG displacement bends the background like heavy glass */
-    --liquid-glass-saturation: 1.18; /* higher = more colorful glass blur */
+    --liquid-glass-saturation: 1.12; /* higher = more colorful glass blur */
     --liquid-glass-contrast: 1.07; /* higher = stronger bent-glass definition */
-    --liquid-glass-shine-opacity: 0.12; /* top-left milky shine strength */
-    --liquid-glass-edge-opacity: 0.24; /* soft bright edge strength */
-    --liquid-glass-shadow-opacity: 0.22; /* soft shadow depth behind panels */
-    --desktop-tint: rgba(166, 158, 146, 0.28); /* uniform grey-cream tint behind panel gaps. Higher alpha = less desktop color showing through */
+    --liquid-glass-shine-opacity: 0.09; /* top-left milky shine strength */
+    --liquid-glass-edge-opacity: 0.2; /* soft bright edge strength */
+    --liquid-glass-shadow-opacity: 0.26; /* soft shadow depth behind panels */
+    --desktop-tint: rgba(74, 70, 66, 0.2); /* uniform grey-cream tint behind panel gaps. Higher alpha = less desktop color showing through */
     --desktop-blur-amount: 22px; /* blur applied to the transparent app background */
-    --bg-floating: rgba(196, 188, 176, 0.86); /* tooltips, menus, and popouts. Higher alpha = easier to read */
+    --bg-floating: rgba(124, 118, 110, 0.8); /* tooltips, menus, and popouts. Higher alpha = easier to read */
+
+    /* pastel glow options */
+    --pastel-glow: on; /* off: no glow, on: subtle rainbow glow under text and icons */
+    --pastel-glow-opacity: 0.2; /* lower = softer glow, higher = brighter glow */
+    --pastel-glow-size: 6px; /* text glow spread */
+    --pastel-icon-glow-size: 5px; /* icon glow spread */
 
     /* chatbar options */
     --custom-chatbar: off; /* off: default chatbar, separated: chatbar separated from chat */
@@ -3032,12 +3075,12 @@ body {
     --text-5: #4b504b; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: rgba(92, 96, 91, 0.36); /* buttons when clicked */
-    --bg-2: rgba(156, 148, 137, 0.32); /* buttons and controls */
-    --bg-3: rgba(184, 176, 164, 0.46); /* panels and secondary surfaces */
-    --bg-4: rgba(196, 188, 176, 0.54); /* main darker grey-cream glass background. Lower alpha = more see-through */
-    --hover: rgba(5, 47, 95, 0.09); /* channels and buttons when hovered */
-    --active: rgba(5, 47, 95, 0.16); /* channels and buttons when clicked or selected */
+    --bg-1: rgba(68, 70, 66, 0.34); /* buttons when clicked */
+    --bg-2: rgba(112, 105, 96, 0.28); /* buttons and controls */
+    --bg-3: rgba(118, 112, 104, 0.34); /* panels and secondary surfaces */
+    --bg-4: rgba(124, 118, 110, 0.42); /* main darker grey-cream glass background. Lower alpha = more see-through */
+    --hover: rgba(5, 47, 95, 0.11); /* channels and buttons when hovered */
+    --active: rgba(5, 47, 95, 0.2); /* channels and buttons when clicked or selected */
     --active-2: rgba(143, 45, 86, 0.14); /* extra state for transparent buttons */
     --message-hover: rgba(5, 47, 95, 0.06); /* messages when hovered */
 

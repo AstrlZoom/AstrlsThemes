@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@property --pastel-glow {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
 :root {
     container-name: root;
 
@@ -38,6 +44,37 @@ body {
     --liquid-glass-shine-opacity: 0.12;
     --liquid-glass-edge-opacity: 0.24;
     --liquid-glass-shadow-opacity: 0.22;
+
+    /* pastel glow defaults. The public theme file turns this on. */
+    --pastel-glow: off;
+    --pastel-glow-opacity: 0.2;
+    --pastel-glow-size: 6px;
+    --pastel-icon-glow-size: 5px;
+}
+
+@container body style(--pastel-glow: on) {
+    #app-mount {
+        --pastel-rainbow-blue: rgba(157, 234, 255, var(--pastel-glow-opacity));
+        --pastel-rainbow-green: rgba(132, 242, 214, var(--pastel-glow-opacity));
+        --pastel-rainbow-cream: rgba(255, 228, 184, var(--pastel-glow-opacity));
+        --pastel-rainbow-pink: rgba(240, 183, 179, var(--pastel-glow-opacity));
+        --pastel-text-glow:
+            0 0 calc(var(--pastel-glow-size) * 0.65) var(--pastel-rainbow-blue),
+            1px 1px var(--pastel-glow-size) var(--pastel-rainbow-pink),
+            -1px 1px var(--pastel-glow-size) var(--pastel-rainbow-cream);
+        --pastel-icon-glow-filter:
+            drop-shadow(0 0 calc(var(--pastel-icon-glow-size) * 0.8) var(--pastel-rainbow-blue))
+            drop-shadow(1px 1px var(--pastel-icon-glow-size) var(--pastel-rainbow-pink))
+            drop-shadow(-1px 1px var(--pastel-icon-glow-size) var(--pastel-rainbow-green));
+    }
+
+    #app-mount :where(div, span, p, a, button, label, strong, em, code, time, h1, h2, h3, h4, h5, h6, input, textarea) {
+        text-shadow: var(--pastel-text-glow);
+    }
+
+    #app-mount :where(svg, [class*='icon_'], [class*='Icon_'], [class*='buttonIcon_'], [class*='ButtonIcon_']) {
+        filter: var(--pastel-icon-glow-filter);
+    }
 }
 
 /* panel separation */
