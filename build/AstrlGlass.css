@@ -9,6 +9,12 @@
     initial-value: off;
 }
 
+@property --pastel-icon-glow {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: off;
+}
+
 :root {
     container-name: root;
 
@@ -51,6 +57,9 @@ body {
     --pastel-glow-opacity: 0.22;
     --pastel-glow-size: 4px;
     --pastel-glow-duration: 9s;
+    --pastel-icon-glow: off;
+    --pastel-icon-glow-opacity: 0.16;
+    --pastel-icon-glow-size: 3px;
 }
 
 @container body style(--pastel-glow: on) {
@@ -68,6 +77,22 @@ body {
     #app-mount :where(div, span, p, a, button, label, strong, em, code, time, h1, h2, h3, h4, h5, h6, input, textarea) {
         text-shadow: var(--pastel-text-glow);
         animation: astrl-text-glow-shimmer var(--pastel-glow-duration) ease-in-out infinite;
+    }
+}
+
+@container body style(--pastel-icon-glow: on) {
+    #app-mount {
+        --pastel-icon-rainbow-blue: rgba(157, 234, 255, var(--pastel-icon-glow-opacity));
+        --pastel-icon-rainbow-green: rgba(132, 242, 214, var(--pastel-icon-glow-opacity));
+        --pastel-icon-rainbow-pink: rgba(240, 183, 179, var(--pastel-icon-glow-opacity));
+        --pastel-icon-glow-filter:
+            drop-shadow(0 0 calc(var(--pastel-icon-glow-size) * 0.8) var(--pastel-icon-rainbow-blue))
+            drop-shadow(1px 1px var(--pastel-icon-glow-size) var(--pastel-icon-rainbow-pink))
+            drop-shadow(-1px 1px var(--pastel-icon-glow-size) var(--pastel-icon-rainbow-green));
+    }
+
+    #app-mount :where(svg, [class*='icon_'], [class*='Icon_'], [class*='buttonIcon_'], [class*='ButtonIcon_']) {
+        filter: var(--pastel-icon-glow-filter);
     }
 }
 

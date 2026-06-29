@@ -90,6 +90,9 @@ body {
     --pastel-glow-opacity: 0.22; /* lower = softer glow, higher = brighter glow */
     --pastel-glow-size: 4px; /* text glow spread */
     --pastel-glow-duration: 9s; /* speed of the slow color shimmer */
+    --pastel-icon-glow: on; /* off: no icon glow, on: keep the subtle fixed pastel icon glow */
+    --pastel-icon-glow-opacity: 0.16; /* icon glow strength, separate from text glow */
+    --pastel-icon-glow-size: 3px; /* icon glow spread, separate from text glow */
 
     /* chatbar options */
     --custom-chatbar: off; /* off: default chatbar, separated: chatbar separated from chat */
