@@ -2997,7 +2997,7 @@ body {
     --liquid-glass-shine-opacity: 0.18; /* top-left milky shine strength */
     --liquid-glass-edge-opacity: 0.32; /* soft bright edge strength */
     --liquid-glass-shadow-opacity: 0.3; /* soft shadow depth behind panels */
-    --desktop-tint: linear-gradient(135deg, rgba(255, 241, 232, 0.22), rgba(240, 183, 179, 0.16) 46%, rgba(0, 83, 119, 0.1)); /* cream-first glass layer over the desktop/background */
+    --desktop-tint: rgba(255, 241, 232, 0.32); /* uniform cream tint behind panel gaps. Higher alpha = less desktop color showing through */
     --desktop-blur-amount: 22px; /* blur applied to the transparent app background */
     --bg-floating: rgba(255, 241, 232, 0.94); /* tooltips, menus, and popouts. Higher alpha = easier to read */
 
