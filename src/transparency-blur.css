@@ -54,30 +54,30 @@
 @container body style(--liquid-glass-refraction: on) {
     #app-mount {
         /* Advanced: SVG displacement map packed into CSS so no Discord HTML edits are needed. */
-        --liquid-glass-refraction-filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='liquid-refraction' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='3' seed='7' result='noise'/%3E%3CfeGaussianBlur in='noise' stdDeviation='6' result='blurredNoise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='blurredNoise' scale='18' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E#liquid-refraction");
+        --liquid-glass-refraction-filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='liquid-refraction' x='-24%25' y='-24%25' width='148%25' height='148%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.009 0.014' numOctaves='2' seed='11' result='noise'/%3E%3CfeGaussianBlur in='noise' stdDeviation='7' result='blurredNoise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='blurredNoise' scale='12' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E#liquid-refraction");
     }
 }
 
 @container body style(--liquid-glass: on) {
     #app-mount {
-        --panel-backdrop-filter: blur(var(--blur-amount)) saturate(var(--liquid-glass-saturation)) contrast(1.04) var(--liquid-glass-refraction-filter);
+        --panel-backdrop-filter: blur(var(--blur-amount)) saturate(var(--liquid-glass-saturation)) contrast(var(--liquid-glass-contrast)) var(--liquid-glass-refraction-filter);
         --panel-background:
             radial-gradient(
-                120% 90% at 8% 0%,
-                rgba(255, 241, 232, var(--liquid-glass-shine-opacity)),
-                transparent 36%
+                140% 90% at 10% 0%,
+                rgba(255, 248, 238, var(--liquid-glass-shine-opacity)),
+                transparent 34%
             ),
-            radial-gradient(85% 90% at 92% 8%, rgba(157, 234, 255, 0.06), transparent 45%),
-            radial-gradient(80% 60% at 50% 105%, rgba(240, 183, 179, 0.14), transparent 55%),
-            linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 241, 232, 0.08) 42%, rgba(0, 83, 119, 0.05)),
+            radial-gradient(90% 85% at 95% 10%, rgba(255, 255, 255, 0.08), transparent 48%),
+            radial-gradient(100% 70% at 50% 105%, rgba(143, 137, 127, 0.12), transparent 60%),
+            linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(210, 202, 190, 0.08) 42%, rgba(5, 47, 95, 0.035)),
             var(--background-base-lower);
         --panel-box-shadow:
-            inset 0 1px 1px rgba(255, 241, 232, var(--liquid-glass-edge-opacity)),
-            inset 0 12px 24px rgba(255, 241, 232, 0.1),
-            inset 1px 0 0 rgba(255, 255, 255, 0.1),
-            inset -1px 0 0 rgba(157, 234, 255, 0.1),
-            inset 0 -14px 24px rgba(0, 18, 38, 0.18),
-            0 18px 44px rgba(0, 18, 38, var(--liquid-glass-shadow-opacity));
+            inset 0 1px 1px rgba(255, 248, 238, var(--liquid-glass-edge-opacity)),
+            inset 0 10px 22px rgba(255, 248, 238, 0.08),
+            inset 1px 0 0 rgba(255, 255, 255, 0.07),
+            inset -1px 0 0 rgba(5, 47, 95, 0.07),
+            inset 0 -16px 26px rgba(54, 45, 38, 0.13),
+            0 18px 46px rgba(25, 23, 20, var(--liquid-glass-shadow-opacity));
     }
 }
 

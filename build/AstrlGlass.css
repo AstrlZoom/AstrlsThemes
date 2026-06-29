@@ -34,10 +34,11 @@ body {
     --liquid-glass: off;
     --liquid-glass-refraction: off;
     --liquid-glass-refraction-filter: ;
-    --liquid-glass-saturation: 1.3;
-    --liquid-glass-shine-opacity: 0.16;
-    --liquid-glass-edge-opacity: 0.28;
-    --liquid-glass-shadow-opacity: 0.28;
+    --liquid-glass-saturation: 1.18;
+    --liquid-glass-contrast: 1.07;
+    --liquid-glass-shine-opacity: 0.12;
+    --liquid-glass-edge-opacity: 0.24;
+    --liquid-glass-shadow-opacity: 0.22;
 }
 
 /* panel separation */
@@ -792,21 +793,21 @@ body {
 
     /* text colors */
     --text-0: var(--astrl-navy); /* text on bright colored elements */
-    --text-1: #052f5f; /* strongest text on cream panels */
-    --text-2: #17425f; /* headings and important text */
-    --text-3: #365f70; /* normal text */
-    --text-4: #65808b; /* icon buttons and channels */
-    --text-5: #91a0a3; /* muted channels/chats and timestamps */
+    --text-1: #18343a; /* strongest text on cream panels */
+    --text-2: #2b4a4d; /* headings and important text */
+    --text-3: #536865; /* normal text */
+    --text-4: #75827e; /* icon buttons and channels */
+    --text-5: #94928b; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: rgba(0, 83, 119, 0.26); /* buttons when clicked */
-    --bg-2: rgba(240, 183, 179, 0.42); /* buttons and controls */
-    --bg-3: rgba(250, 222, 210, 0.74); /* spacing, secondary elements */
-    --bg-4: rgba(255, 241, 232, 0.78); /* main cream glass background */
-    --hover: rgba(0, 83, 119, 0.1); /* channels and buttons when hovered */
-    --active: rgba(0, 83, 119, 0.2); /* channels and buttons when clicked or selected */
-    --active-2: rgba(216, 17, 89, 0.16); /* extra state for transparent buttons */
-    --message-hover: rgba(5, 47, 95, 0.07); /* messages when hovered */
+    --bg-1: rgba(92, 96, 91, 0.36); /* buttons when clicked */
+    --bg-2: rgba(156, 148, 137, 0.32); /* buttons and controls */
+    --bg-3: rgba(184, 176, 164, 0.46); /* spacing, secondary elements */
+    --bg-4: rgba(196, 188, 176, 0.54); /* main darker grey-cream glass background */
+    --hover: rgba(5, 47, 95, 0.09); /* channels and buttons when hovered */
+    --active: rgba(5, 47, 95, 0.16); /* channels and buttons when clicked or selected */
+    --active-2: rgba(143, 45, 86, 0.14); /* extra state for transparent buttons */
+    --message-hover: rgba(5, 47, 95, 0.06); /* messages when hovered */
 
     /* accent colors */
     --accent-1: var(--blue-1); /* links and other accent text */
@@ -2454,30 +2455,30 @@ body {
 @container body style(--liquid-glass-refraction: on) {
     #app-mount {
         /* Advanced: SVG displacement map packed into CSS so no Discord HTML edits are needed. */
-        --liquid-glass-refraction-filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='liquid-refraction' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='3' seed='7' result='noise'/%3E%3CfeGaussianBlur in='noise' stdDeviation='6' result='blurredNoise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='blurredNoise' scale='18' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E#liquid-refraction");
+        --liquid-glass-refraction-filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='liquid-refraction' x='-24%25' y='-24%25' width='148%25' height='148%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.009 0.014' numOctaves='2' seed='11' result='noise'/%3E%3CfeGaussianBlur in='noise' stdDeviation='7' result='blurredNoise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='blurredNoise' scale='12' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E#liquid-refraction");
     }
 }
 
 @container body style(--liquid-glass: on) {
     #app-mount {
-        --panel-backdrop-filter: blur(var(--blur-amount)) saturate(var(--liquid-glass-saturation)) contrast(1.04) var(--liquid-glass-refraction-filter);
+        --panel-backdrop-filter: blur(var(--blur-amount)) saturate(var(--liquid-glass-saturation)) contrast(var(--liquid-glass-contrast)) var(--liquid-glass-refraction-filter);
         --panel-background:
             radial-gradient(
-                120% 90% at 8% 0%,
-                rgba(255, 241, 232, var(--liquid-glass-shine-opacity)),
-                transparent 36%
+                140% 90% at 10% 0%,
+                rgba(255, 248, 238, var(--liquid-glass-shine-opacity)),
+                transparent 34%
             ),
-            radial-gradient(85% 90% at 92% 8%, rgba(157, 234, 255, 0.06), transparent 45%),
-            radial-gradient(80% 60% at 50% 105%, rgba(240, 183, 179, 0.14), transparent 55%),
-            linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 241, 232, 0.08) 42%, rgba(0, 83, 119, 0.05)),
+            radial-gradient(90% 85% at 95% 10%, rgba(255, 255, 255, 0.08), transparent 48%),
+            radial-gradient(100% 70% at 50% 105%, rgba(143, 137, 127, 0.12), transparent 60%),
+            linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(210, 202, 190, 0.08) 42%, rgba(5, 47, 95, 0.035)),
             var(--background-base-lower);
         --panel-box-shadow:
-            inset 0 1px 1px rgba(255, 241, 232, var(--liquid-glass-edge-opacity)),
-            inset 0 12px 24px rgba(255, 241, 232, 0.1),
-            inset 1px 0 0 rgba(255, 255, 255, 0.1),
-            inset -1px 0 0 rgba(157, 234, 255, 0.1),
-            inset 0 -14px 24px rgba(0, 18, 38, 0.18),
-            0 18px 44px rgba(0, 18, 38, var(--liquid-glass-shadow-opacity));
+            inset 0 1px 1px rgba(255, 248, 238, var(--liquid-glass-edge-opacity)),
+            inset 0 10px 22px rgba(255, 248, 238, 0.08),
+            inset 1px 0 0 rgba(255, 255, 255, 0.07),
+            inset -1px 0 0 rgba(5, 47, 95, 0.07),
+            inset 0 -16px 26px rgba(54, 45, 38, 0.13),
+            0 18px 46px rgba(25, 23, 20, var(--liquid-glass-shadow-opacity));
     }
 }
 

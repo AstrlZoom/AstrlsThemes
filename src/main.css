@@ -33,10 +33,11 @@ body {
     --liquid-glass: off;
     --liquid-glass-refraction: off;
     --liquid-glass-refraction-filter: ;
-    --liquid-glass-saturation: 1.3;
-    --liquid-glass-shine-opacity: 0.16;
-    --liquid-glass-edge-opacity: 0.28;
-    --liquid-glass-shadow-opacity: 0.28;
+    --liquid-glass-saturation: 1.18;
+    --liquid-glass-contrast: 1.07;
+    --liquid-glass-shine-opacity: 0.12;
+    --liquid-glass-edge-opacity: 0.24;
+    --liquid-glass-shadow-opacity: 0.22;
 }
 
 /* panel separation */

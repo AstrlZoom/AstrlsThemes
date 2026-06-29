@@ -69,20 +69,21 @@ body {
     --background-image-url: url(''); /* url of the background image */
 
     /* transparency/blur options */
-    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: rgba(196, 188, 176, 0.54); */
     --transparency-tweaks: on; /* off: no changes, on: remove some elements for better transparency */
     --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
     --panel-blur: on; /* off: no changes, on: blur the background of panels */
-    --blur-amount: 24px; /* amount of blur */
+    --blur-amount: 30px; /* amount of blur */
     --liquid-glass: on; /* off: flat glass, on: liquid glass highlights and depth */
     --liquid-glass-refraction: on; /* off: blur only, on: SVG displacement bends the background like heavy glass */
-    --liquid-glass-saturation: 1.35; /* higher = more colorful glass blur */
-    --liquid-glass-shine-opacity: 0.18; /* top-left milky shine strength */
-    --liquid-glass-edge-opacity: 0.32; /* soft bright edge strength */
-    --liquid-glass-shadow-opacity: 0.3; /* soft shadow depth behind panels */
-    --desktop-tint: rgba(255, 241, 232, 0.32); /* uniform cream tint behind panel gaps. Higher alpha = less desktop color showing through */
+    --liquid-glass-saturation: 1.18; /* higher = more colorful glass blur */
+    --liquid-glass-contrast: 1.07; /* higher = stronger bent-glass definition */
+    --liquid-glass-shine-opacity: 0.12; /* top-left milky shine strength */
+    --liquid-glass-edge-opacity: 0.24; /* soft bright edge strength */
+    --liquid-glass-shadow-opacity: 0.22; /* soft shadow depth behind panels */
+    --desktop-tint: rgba(166, 158, 146, 0.28); /* uniform grey-cream tint behind panel gaps. Higher alpha = less desktop color showing through */
     --desktop-blur-amount: 22px; /* blur applied to the transparent app background */
-    --bg-floating: rgba(255, 241, 232, 0.94); /* tooltips, menus, and popouts. Higher alpha = easier to read */
+    --bg-floating: rgba(196, 188, 176, 0.86); /* tooltips, menus, and popouts. Higher alpha = easier to read */
 
     /* chatbar options */
     --custom-chatbar: off; /* off: default chatbar, separated: chatbar separated from chat */
@@ -106,21 +107,21 @@ body {
 
     /* text colors */
     --text-0: var(--astrl-navy); /* text on bright colored elements */
-    --text-1: #052f5f; /* strongest text on cream panels */
-    --text-2: #17425f; /* headings and important text */
-    --text-3: #365f70; /* normal text */
-    --text-4: #65808b; /* icon buttons and channels */
-    --text-5: #91a0a3; /* muted channels/chats and timestamps */
+    --text-1: #18343a; /* strongest text on cream panels */
+    --text-2: #2b4a4d; /* headings and important text */
+    --text-3: #536865; /* normal text */
+    --text-4: #75827e; /* icon buttons and channels */
+    --text-5: #94928b; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: rgba(0, 83, 119, 0.26); /* buttons when clicked */
-    --bg-2: rgba(240, 183, 179, 0.42); /* buttons and controls */
-    --bg-3: rgba(250, 222, 210, 0.74); /* panels and secondary surfaces */
-    --bg-4: rgba(255, 241, 232, 0.78); /* main cream glass background. Lower alpha = more see-through */
-    --hover: rgba(0, 83, 119, 0.1); /* channels and buttons when hovered */
-    --active: rgba(0, 83, 119, 0.2); /* channels and buttons when clicked or selected */
-    --active-2: rgba(216, 17, 89, 0.16); /* extra state for transparent buttons */
-    --message-hover: rgba(5, 47, 95, 0.07); /* messages when hovered */
+    --bg-1: rgba(92, 96, 91, 0.36); /* buttons when clicked */
+    --bg-2: rgba(156, 148, 137, 0.32); /* buttons and controls */
+    --bg-3: rgba(184, 176, 164, 0.46); /* panels and secondary surfaces */
+    --bg-4: rgba(196, 188, 176, 0.54); /* main darker grey-cream glass background. Lower alpha = more see-through */
+    --hover: rgba(5, 47, 95, 0.09); /* channels and buttons when hovered */
+    --active: rgba(5, 47, 95, 0.16); /* channels and buttons when clicked or selected */
+    --active-2: rgba(143, 45, 86, 0.14); /* extra state for transparent buttons */
+    --message-hover: rgba(5, 47, 95, 0.06); /* messages when hovered */
 
     /* accent colors */
     --accent-1: var(--blue-1); /* links and other accent text */
